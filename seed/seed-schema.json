@@ -1,0 +1,264 @@
+{
+	"$schema": "https://emdashcms.com/seed.schema.json",
+	"version": "1",
+	"defaultLocale": "en",
+	"meta": {
+		"name": "Minnehaha Food Shelf",
+		"description": "Website for Minnehaha Food Shelf, south Minneapolis",
+		"author": "Minnehaha Food Shelf"
+	},
+	"settings": {
+		"title": "Minnehaha Food Shelf",
+		"tagline": "Fighting food insecurity in our community"
+	},
+	"collections": [
+		{
+			"slug": "home",
+			"label": "Home page",
+			"labelSingular": "Home page",
+			"icon": "home",
+			"sortOrder": 0,
+			"urlPattern": "/",
+			"supports": [
+				"drafts",
+				"revisions",
+				"seo"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "subtitle",
+					"label": "Subtitle / tagline",
+					"type": "string"
+				},
+				{
+					"slug": "description",
+					"label": "Description (search engines)",
+					"type": "text"
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
+		},
+		{
+			"slug": "pages",
+			"label": "Pages",
+			"labelSingular": "Page",
+			"icon": "file-text",
+			"sortOrder": 1,
+			"urlPattern": "/{slug}",
+			"supports": [
+				"drafts",
+				"revisions",
+				"search",
+				"seo"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "subtitle",
+					"label": "Subtitle / tagline",
+					"type": "string"
+				},
+				{
+					"slug": "description",
+					"label": "Description (search engines)",
+					"type": "text"
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
+		},
+		{
+			"slug": "cards",
+			"label": "Home cards",
+			"labelSingular": "Card",
+			"icon": "layout-grid",
+			"sortOrder": 2,
+			"routable": false,
+			"supports": [
+				"drafts",
+				"revisions"
+			],
+			"admin": {
+				"listColumns": [
+					"archived",
+					"expires",
+					"weight"
+				]
+			},
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title (internal name)",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "weight",
+					"label": "Display order (lower shows first)",
+					"type": "integer",
+					"translatable": false
+				},
+				{
+					"slug": "archived",
+					"label": "Archived (hidden from the home page)",
+					"type": "boolean",
+					"translatable": false
+				},
+				{
+					"slug": "expires",
+					"label": "Hide after (card disappears automatically)",
+					"type": "datetime",
+					"translatable": false
+				},
+				{
+					"slug": "image",
+					"label": "Image",
+					"type": "image"
+				},
+				{
+					"slug": "body",
+					"label": "Text",
+					"type": "portableText",
+					"searchable": true
+				},
+				{
+					"slug": "link",
+					"label": "Link (URL or /page)",
+					"type": "string"
+				},
+				{
+					"slug": "external",
+					"label": "Open link in a new tab",
+					"type": "boolean",
+					"translatable": false
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"id": "menu:main:en",
+			"name": "main",
+			"label": "Main menu",
+			"locale": "en",
+			"items": [
+				{
+					"type": "custom",
+					"label": "HOME",
+					"url": "/"
+				},
+				{
+					"type": "custom",
+					"label": "GET FOOD",
+					"url": "/get-food"
+				},
+				{
+					"type": "custom",
+					"label": "VOLUNTEER",
+					"url": "/volunteer"
+				},
+				{
+					"type": "custom",
+					"label": "DONATE",
+					"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "DIRECTIONS",
+					"url": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122631,-93.2207999,17z/data=!3m1!4b1!4m5!3m4!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122593!4d-93.2186059",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "CONTACT US",
+					"url": "/contact"
+				}
+			]
+		},
+		{
+			"id": "menu:main:es",
+			"name": "main",
+			"label": "Menú principal",
+			"locale": "es",
+			"translationOf": "menu:main:en",
+			"items": [
+				{
+					"type": "custom",
+					"label": "HOGAR",
+					"url": "/es"
+				},
+				{
+					"type": "custom",
+					"label": "CONSEGUIR COMIDA",
+					"url": "/es/get-food"
+				},
+				{
+					"type": "custom",
+					"label": "VOLUNTARIO",
+					"url": "/es/volunteer"
+				},
+				{
+					"type": "custom",
+					"label": "DONAR",
+					"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "DIRECCIONES",
+					"url": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122631,-93.2207999,17z/data=!3m1!4b1!4m5!3m4!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122593!4d-93.2186059",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "CONTÁCTENOS",
+					"url": "/es/contact"
+				}
+			]
+		}
+	],
+	"redirects": [
+		{
+			"source": "/foodshelf",
+			"destination": "/",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		},
+		{
+			"source": "/home",
+			"destination": "/",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		},
+		{
+			"source": "/es/home",
+			"destination": "/es",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		}
+	]
+}

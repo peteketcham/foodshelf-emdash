@@ -1,0 +1,30 @@
+# Homepage cards. Order = display order. "link" starting with / is an internal page; http(s) links open in a new tab.
+# expires = date/time (UTC) after which the card disappears from the home page.
+en:
+  - { slug: get-food, image: get-food.jpg, file: 1Food-Shelf-GET-FOOD.jpg, alt: "Get food", text: "Click here to find food resources in our neighborhood.", link: /get-food }
+  - { slug: volunteer, file: 1Food-Shelf-VOLUNTEER.jpg, alt: "Volunteer", text: "Click here to learn about volunteer opportunities at Minnehaha Food Shelf.", link: /volunteer }
+  - { slug: donate, file: 1Food-Shelf-DONATE.jpg, alt: "Donate", text: "Click here to securely donate to Minnehaha Food Shelf via credit card, debit card or PayPal.", link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url" }
+  - { slug: tuesdays, file: 1Food-Shelf-ALLAREWELCOME.jpg, alt: "All are welcome", text: "Join us every Tuesday from 10:00 a.m. to 3:00 p.m.", link: /area-served }
+  - { slug: about, file: 1Food-Shelf-OUR-MISSION.jpg, alt: "Our mission", text: "Click here to find out more about Minnehaha Food Shelf.", link: /about }
+  - { slug: time-lapse-video, file: Link-to-Time-Lapse-Video-2026.jpg, alt: "Time-lapse video of Minnehaha Food Shelf", text: "CLICK HERE to watch a time-lapse video of what it's like at Minnehaha Food Shelf.", link: "https://www.youtube.com/watch?v=M69UqIW8uWE" }
+  - { slug: newsletter, file: Food-Shelf-Newsletter.jpg, alt: "Food Shelf newsletter", link: "https://mailchi.mp/2646ecc21798/minnehaha-food-shelf-newsletter-march-18156790?e=bd9d421875" }
+  - { slug: pasta-dinner, file: Pasta-Dinner-2026-Tickets.jpg, alt: "Pasta dinner tickets", link: "https://ticketstripe.com/events/473109416619331", expires: "2026-10-23T00:30:00.000Z" }
+  - { slug: hours, file: foodshelfhours.jpg, alt: "Food shelf hours" }
+  - { slug: contact, file: 1Food-Shelf-CONTACT-US.jpg, alt: "Contact us", text: "Click here to contact Minnehaha Food Shelf.", link: /contact }
+  - { slug: thank-you, file: "Thank You.jpg", alt: "Thank you" }
+  - { slug: newsletter-signup, file: enewssignup.png, alt: "Subscribe to our newsletter", text: "Click here to subscribe.", link: "https://mailchi.mp/895b5cd7fe13/minnehahafoodshelfnewslettersignup" }
+  - { slug: monthly-giving, file: "33 cent logo_w_yellowcircle.png", alt: "33 cents a day", text: "Your recurring donation of 33 cents a day – $10 a month – will help us fight food insecurity in our community. Click here to donate.", link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url" }
+  - { slug: blue-bins, file: BlueBarrel.png, alt: "Blue donation bin", text: "We welcome donations of non-perishable food items and personal care products. Drop them in the blue bins at Minnehaha United Methodist Church. Thank you!" }
+es:
+  - { slug: get-food, file: SPA-GET-FOOD_sm.jpg, alt: "Conseguir comida", text: "Haga clic aquí para encontrar recursos alimentarios en el sur de Minneapolis.", link: /es/get-food }
+  - { slug: volunteer, file: SPA-VOLUNTEER_sm.jpg, alt: "Voluntario", text: "Haga clic aquí para conocer las oportunidades de voluntariado en Minnehaha Food Shelf.", link: /es/volunteer }
+  - { slug: donate, file: 1Food-Shelf-DONATE.jpg, alt: "Donar", text: "Haga clic aquí para donar de forma segura a Minnehaha Food Shelf mediante tarjeta de crédito, tarjeta de débito o PayPal.", link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url" }
+  - { slug: tuesdays, file: SPA-ALL-ARE-WELCOME_sm.jpg, alt: "Todos son bienvenidos", text: "Únete a nosotros todos los martes de 10:00 am a 3:00 p.m.", link: /es/area-served }
+  - { slug: about, file: SPA-OUR-MISSION_sm.jpg, alt: "Nuestra misión", text: "Haga clic aquí para obtener más información sobre Minnehaha Food Shelf.", link: /es/about }
+  - { slug: time-lapse-video, file: Link-to-Time-Lapse-Video-2026.jpg, alt: "Video time-lapse de Minnehaha Food Shelf", text: "HAGA CLIC AQUÍ para ver un video time-lapse de cómo es un día en Minnehaha Food Shelf.", link: "https://www.youtube.com/watch?v=M69UqIW8uWE" }
+  - { slug: hours, file: foodshelfhours.jpg, alt: "Horario del Food Shelf" }
+  - { slug: contact, file: SPA-CONTACT-US_sm.jpg, alt: "Contáctenos", text: "Haga clic aquí para comunicarse con Minnehaha Food Shelf.", link: /es/contact }
+  - { slug: thank-you, file: "Thank You.jpg", alt: "Gracias" }
+  - { slug: newsletter-signup, file: enewssignup.png, alt: "Suscríbase a nuestro boletín", text: "Haga clic aquí para suscribirse.", link: "https://mailchi.mp/895b5cd7fe13/minnehahafoodshelfnewslettersignup" }
+  - { slug: monthly-giving, file: "33 cent logo_w_yellowcircle.png", alt: "33 centavos al día", text: "Su donación recurrente de 33 centavos al día (10 dólares al mes) nos ayudará a combatir la inseguridad alimentaria en el sur de Minneapolis. Haga clic aquí para donar.", link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url" }
+  - { slug: blue-bins, file: BlueBarrel.png, alt: "Contenedor azul de donaciones", text: "Damos la bienvenida a donaciones de alimentos no perecederos y productos de cuidado personal. Déjelos en los contenedores azules de la Iglesia Metodista Unida de Minnehaha. ¡Gracias!" }

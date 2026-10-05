@@ -1,0 +1,4332 @@
+{
+	"$schema": "https://emdashcms.com/seed.schema.json",
+	"version": "1",
+	"defaultLocale": "en",
+	"meta": {
+		"name": "Minnehaha Food Shelf",
+		"description": "Website for Minnehaha Food Shelf, south Minneapolis",
+		"author": "Minnehaha Food Shelf"
+	},
+	"settings": {
+		"title": "Minnehaha Food Shelf",
+		"tagline": "Fighting food insecurity in our community"
+	},
+	"collections": [
+		{
+			"slug": "home",
+			"label": "Home page",
+			"labelSingular": "Home page",
+			"icon": "home",
+			"sortOrder": 0,
+			"urlPattern": "/",
+			"supports": [
+				"drafts",
+				"revisions",
+				"seo"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "subtitle",
+					"label": "Subtitle / tagline",
+					"type": "string"
+				},
+				{
+					"slug": "description",
+					"label": "Description (search engines)",
+					"type": "text"
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
+		},
+		{
+			"slug": "pages",
+			"label": "Pages",
+			"labelSingular": "Page",
+			"icon": "file-text",
+			"sortOrder": 1,
+			"urlPattern": "/{slug}",
+			"supports": [
+				"drafts",
+				"revisions",
+				"search",
+				"seo"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "subtitle",
+					"label": "Subtitle / tagline",
+					"type": "string"
+				},
+				{
+					"slug": "description",
+					"label": "Description (search engines)",
+					"type": "text"
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
+		},
+		{
+			"slug": "cards",
+			"label": "Home cards",
+			"labelSingular": "Card",
+			"icon": "layout-grid",
+			"sortOrder": 2,
+			"routable": false,
+			"supports": [
+				"drafts",
+				"revisions"
+			],
+			"admin": {
+				"listColumns": [
+					"archived",
+					"expires",
+					"weight"
+				]
+			},
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title (internal name)",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "weight",
+					"label": "Display order (lower shows first)",
+					"type": "integer",
+					"translatable": false
+				},
+				{
+					"slug": "archived",
+					"label": "Archived (hidden from the home page)",
+					"type": "boolean",
+					"translatable": false
+				},
+				{
+					"slug": "expires",
+					"label": "Hide after (card disappears automatically)",
+					"type": "datetime",
+					"translatable": false
+				},
+				{
+					"slug": "image",
+					"label": "Image",
+					"type": "image"
+				},
+				{
+					"slug": "body",
+					"label": "Text",
+					"type": "portableText",
+					"searchable": true
+				},
+				{
+					"slug": "link",
+					"label": "Link (URL or /page)",
+					"type": "string"
+				},
+				{
+					"slug": "external",
+					"label": "Open link in a new tab",
+					"type": "boolean",
+					"translatable": false
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"id": "menu:main:en",
+			"name": "main",
+			"label": "Main menu",
+			"locale": "en",
+			"items": [
+				{
+					"type": "custom",
+					"label": "HOME",
+					"url": "/"
+				},
+				{
+					"type": "custom",
+					"label": "GET FOOD",
+					"url": "/get-food"
+				},
+				{
+					"type": "custom",
+					"label": "VOLUNTEER",
+					"url": "/volunteer"
+				},
+				{
+					"type": "custom",
+					"label": "DONATE",
+					"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "DIRECTIONS",
+					"url": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122631,-93.2207999,17z/data=!3m1!4b1!4m5!3m4!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122593!4d-93.2186059",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "CONTACT US",
+					"url": "/contact"
+				}
+			]
+		},
+		{
+			"id": "menu:main:es",
+			"name": "main",
+			"label": "Menú principal",
+			"locale": "es",
+			"translationOf": "menu:main:en",
+			"items": [
+				{
+					"type": "custom",
+					"label": "HOGAR",
+					"url": "/es"
+				},
+				{
+					"type": "custom",
+					"label": "CONSEGUIR COMIDA",
+					"url": "/es/get-food"
+				},
+				{
+					"type": "custom",
+					"label": "VOLUNTARIO",
+					"url": "/es/volunteer"
+				},
+				{
+					"type": "custom",
+					"label": "DONAR",
+					"url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "DIRECCIONES",
+					"url": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122631,-93.2207999,17z/data=!3m1!4b1!4m5!3m4!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122593!4d-93.2186059",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "CONTÁCTENOS",
+					"url": "/es/contact"
+				}
+			]
+		}
+	],
+	"redirects": [
+		{
+			"source": "/foodshelf",
+			"destination": "/",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		},
+		{
+			"source": "/home",
+			"destination": "/",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		},
+		{
+			"source": "/es/home",
+			"destination": "/es",
+			"type": 301,
+			"groupName": "Old Food Shelf pages"
+		}
+	],
+	"content": {
+		"home": [
+			{
+				"id": "home-home",
+				"slug": "home",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Minnehaha Food Shelf",
+					"subtitle": "fighting food insecurity in our community",
+					"description": "Minnehaha Food Shelf distributes fresh, nutritious food every Tuesday from 10:00 a.m. to 3:00 p.m. at 3701 E. 50th St., Minneapolis. All are welcome.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "home-home-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "home-home-en-0",
+									"text": "We fight food insecurity in our community by distributing fresh, nutritious food every Tuesday. All are welcome. We serve nearly 300 households per week. Thank you for your support.",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "home-home-es",
+				"slug": "home",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "home-home",
+				"data": {
+					"title": "Estante de Comida Minnehaha",
+					"subtitle": "Luchando contra la inseguridad alimentaria en nuestro vecindario de Minneapolis",
+					"description": "Minnehaha Food Shelf distribuye alimentos frescos y nutritivos todos los martes de 10:00 am a 3:00 pm en 3701 E. 50th St., Minneapolis. Todos son bienvenidos.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "home-home-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "home-home-es-0",
+									"text": "Luchamos contra la inseguridad alimentaria en nuestro vecindario de Minneapolis distribuyendo alimentos frescos y nutritivos todos los martes. Todos son bienvenidos. Atendemos a casi 300 hogares por semana. Gracias por su apoyo.",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"pages": [
+			{
+				"id": "pages-about",
+				"slug": "about",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Welcome",
+					"description": "About Minnehaha Food Shelf, a coalition of seven south Minneapolis churches fighting food insecurity for more than 20 years.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-about-en-m",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-en-1",
+									"href": "https://minnehaha.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-4",
+									"href": "https://www.lakenokomischurch.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-7",
+									"href": "https://livingtable.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-a",
+									"href": "https://graceepiscopalmpls.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-d",
+									"href": "https://www.stpeders.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-g",
+									"href": "https://minnehahacommunion.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-en-j",
+									"href": "https://www.spiritcatholiccommunity.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-0",
+									"text": "Minnehaha Food Shelf was founded more than 20 years ago and is a coalition of seven south Minneapolis churches: ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-2",
+									"text": "MINNEHAHA UNITED METHODIST CHURCH",
+									"marks": [
+										"pages-about-en-1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-3",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-5",
+									"text": "LAKE NOKOMIS LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-en-4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-6",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-8",
+									"text": "LIVING TABLE UNITED CHURCH OF CHRIST",
+									"marks": [
+										"pages-about-en-7"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-9",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-b",
+									"text": "GRACE EPISCOPAL CHURCH",
+									"marks": [
+										"pages-about-en-a"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-c",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-e",
+									"text": "ST. PEDER’S LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-en-d"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-f",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-h",
+									"text": "MINNEHAHA COMMUNION LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-en-g"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-i",
+									"text": " and ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-k",
+									"text": "SPIRIT CATHOLIC COMMUNITY",
+									"marks": [
+										"pages-about-en-j"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-l",
+									"text": ". All are welcome regardless of religious affiliation.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-en-n",
+							"asset": {
+								"_ref": "01K0000000DYZ5QFKYZTCNYFP0",
+								"url": "/_emdash/api/media/file/01K0000000DYZ5QFKYZTCNYFP0.jpg",
+								"provider": "local"
+							},
+							"alt": "Volunteers and neighbors at Minnehaha Food Shelf",
+							"width": 982,
+							"height": 550
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-p",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-o",
+									"text": "Demand continues to grow",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-r",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-q",
+									"text": "Over the course of 52 Tuesdays in 2023, Minnehaha Food Shelf served 42,240 individuals: 19,669 children, 19,229 adults and 3,342 seniors. Demand rose dramatically throughout 2023. In January, Minnehaha Food Shelf served 818 households. By July, the monthly tally had grown to 949 households, and during the month of December, Minnehaha Food Shelf served 1,020 households. In order to continue to meet that growing demand, Minnehaha Food Shelf needs your support.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-t",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-s",
+									"text": "Did you know:",
+									"marks": [
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-v",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-u",
+									"text": "1 in 10 Minnesota households are affected by hunger.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-x",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-w",
+									"text": "Minnesota recorded more than 7.5 million food shelf visits in 2023, a 30 percent increase over 2022.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-z",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-y",
+									"text": "More than 50 million Americans, including more than 13 million children, live in households that don’t have consistent access to nutritious food.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-11",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-10",
+									"text": "More than 5 million American senior citizens, ages 60 and older, face hunger. (Source: Second Harvest Heartland, Star Tribune)",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-13",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-12",
+									"text": "Donate to Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-15",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-14",
+									"text": "Your financial support is vital in the fight against food insecurity. Click on the button below to donate via credit card, debit card or PayPal. (If you prefer to donate by check, send it to Minnehaha Food Shelf, 3701 E. 50th St., Minneapolis, MN 55417). Thank you.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-en-16",
+							"asset": {
+								"_ref": "01K0000000C2H446DBR4CTZN77",
+								"url": "/_emdash/api/media/file/01K0000000C2H446DBR4CTZN77.jpg",
+								"provider": "local"
+							},
+							"alt": "Donate with PayPal",
+							"width": 300,
+							"height": 131,
+							"link": {
+								"href": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+								"blank": true
+							}
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-18",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-17",
+									"text": "Give to Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1a",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-19",
+									"text": "Your gift of non-perishable food items will help combat food insecurity in Minneapolis. Look for the big blue bins at Minnehaha United Methodist Church and Oxendales (5025 34th Ave. S., Minneapolis). Personal care products are also welcome.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1c",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1b",
+									"text": "Volunteer at Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1h",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-en-1e",
+									"href": "mailto:foodshelfvolunteers@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1d",
+									"text": "Consider volunteering your time and expertise. We need assistance with unloading trucks, food distribution setup and takedown, inventory management, registering/checking in clients, Spanish-to-English interpretation, community outreach, volunteer coordination, social media support and other vital tasks. Many volunteer positions require being on-site during our open hours (Tuesday from 10:00 a.m. to 3:00 p.m.), but others do not. For more information, contact ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1f",
+									"text": "foodshelfvolunteers@minnehaha.org",
+									"marks": [
+										"pages-about-en-1e"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1g",
+									"text": ".",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-en-1i",
+							"asset": {
+								"_ref": "01K0000000CZ7QWTQNR2ZXRQFT",
+								"url": "/_emdash/api/media/file/01K0000000CZ7QWTQNR2ZXRQFT.jpg",
+								"provider": "local"
+							},
+							"alt": "A Second Harvest Heartland delivery truck",
+							"width": 1000,
+							"height": 774
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1k",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1j",
+									"text": "Two food banks support Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1m",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1l",
+									"text": "A food bank acts as a wholesaler, efficiently sourcing large amounts of food — both donated and purchased — and then making it available to local food shelves.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1r",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-en-1o",
+									"href": "https://www.2harvest.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1n",
+									"text": "The primary source for food at Minnehaha Food Shelf is ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1p",
+									"text": "SECOND HARVEST HEARTLAND",
+									"marks": [
+										"pages-about-en-1o"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1q",
+									"text": ". It’s the region’s largest food bank, serving 423 food shelves in Minnesota and western Wisconsin from its Brooklyn Park facility. In 2022, Second Harvest Heartland distributed nearly 123 million pounds of food.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1w",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-en-1t",
+									"href": "https://www.thefoodgroupmn.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1s",
+									"text": "Minnehaha Food Shelf also partners with ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1u",
+									"text": "THE FOOD GROUP",
+									"marks": [
+										"pages-about-en-1t"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1v",
+									"text": ". The New Hope-based nonprofit serves 224 food shelves and other organizations in Minnesota. The Food Group distributes produce and other foods from The Emergency Food Assistance Program (TEFAP), a 43-year-old initiative of the U.S. Department of Agriculture that’s designed to combat hunger and boost American agricultural markets.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-en-1y",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-en-1x",
+									"text": "In 2024, Minnehaha Food Shelf is spending an average of $3,100 per week with Second Harvest Heartland and the Food Group.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-en-1z",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-area-served",
+				"slug": "area-served",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Serving Our Neighbors",
+					"description": "Minnehaha Food Shelf is open Tuesdays from 10:00 a.m. to 3:00 p.m. at 3701 East 50th Street, Minneapolis.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-area-served-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-area-served-en-0",
+									"text": "On Tuesdays, from 10:00 a.m. to 3:00 p.m., we provide food for our neighbors at 3701 East 50th Street, Minneapolis.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-area-served-en-6",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-area-served-en-2",
+									"text": "Questions?",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-en-3",
+									"text": " If you have questions or would like additional information, click on the ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-en-4",
+									"text": "Contact Us",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-en-5",
+									"text": " tab above. Thank you.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-area-served-en-7",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-contact",
+				"slug": "contact",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Contact Us",
+					"description": "Contact Minnehaha Food Shelf, 3701 East 50th Street, Minneapolis. Open Tuesdays 10:00 a.m. to 3:00 p.m.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-1",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-0",
+									"text": "3701 East 50th Street",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-2",
+									"text": "Minneapolis, MN 55417",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-8",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-contact-en-5",
+									"href": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122606,-93.2186204,17z/data=!3m1!4b1!4m6!3m5!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122606!4d-93.2186204!16s%2Fg%2F1tvdkbv4?entry=ttu"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-4",
+									"text": "Click ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-6",
+									"text": "HERE",
+									"marks": [
+										"pages-contact-en-5"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-7",
+									"text": " to locate Minnehaha Food Shelf on Google Maps.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-b",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-contact-en-9",
+									"href": "mailto:foodshelf@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-a",
+									"text": "foodshelf@minnehaha.org",
+									"marks": [
+										"pages-contact-en-9"
+									]
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-contact-en-c",
+							"asset": {
+								"_ref": "01K0000000WF43R726MZ6RY5AZ",
+								"url": "/_emdash/api/media/file/01K0000000WF43R726MZ6RY5AZ.jpg",
+								"provider": "local"
+							},
+							"alt": "Minnehaha United Methodist Church building",
+							"width": 1000,
+							"height": 782
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-e",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-d",
+									"text": "Hours of Operation",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-g",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-f",
+									"text": "Tuesday from 10:00 a.m. to 3:00 p.m.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-i",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-h",
+									"text": "Manager",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-en-k",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-en-j",
+									"text": "Britt Reuter",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-get-food",
+				"slug": "get-food",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "If You Need Help Right Now",
+					"description": "Find food resources near Minnehaha Food Shelf in south Minneapolis, including United Way 2-1-1 and nearby grab-and-go meals.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-6",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-3",
+									"href": "https://211unitedway.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-0",
+									"text": "United Way 2-1-1 provides free and confidential information about where to get food, clothing, medical care, legal assistance and other resources. ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-1",
+									"text": "If you need help right now, call 2-1-1",
+									"marks": [
+										"em",
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-2",
+									"text": " (or toll-free 800-543-7709). Call centers are staffed 24 hours a day, seven days a week, or go to ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-4",
+									"text": "211UNITEDWAY.ORG",
+									"marks": [
+										"pages-get-food-en-3"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-5",
+									"text": ". Other nearby sources of food include:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-a",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-7",
+									"href": "https://www.hope-pc.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-8",
+									"text": "HOPE PRESBYTERIAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-en-7"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-9",
+									"text": " offers grab-and-go meals every weekday from 5:00 to 6:00 p.m. (7132 Portland Av. S., Richfield).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-e",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-b",
+									"href": "https://nokomisheights.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-c",
+									"text": "NOKOMIS HEIGHTS LUTHERAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-en-b"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-d",
+									"text": " offers grab-and-go meals every Wednesday from 5:00 to 6:00 p.m. (5300 10th Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-i",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-f",
+									"href": "https://mtolivet.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-g",
+									"text": "MOUNT OLIVET LUTHERAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-en-f"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-h",
+									"text": " offers grab-and-go meals every Thursday from 4:00 to 5:00 p.m. (5025 Knox Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-m",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-j",
+									"href": "https://centralusa.salvationarmy.org/usc/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-k",
+									"text": "SOUTH MINNEAPOLIS SALVATION ARMY",
+									"marks": [
+										"strong",
+										"pages-get-food-en-j"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-l",
+									"text": " serves a free hot lunch every Monday, Tuesday and Wednesday from Noon to 1:00 p.m. (1604 E. Lake St., Minneapolis)",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-q",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-n",
+									"href": "https://firstnationskitchen.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-o",
+									"text": "FIRST NATIONS KITCHEN",
+									"marks": [
+										"strong",
+										"pages-get-food-en-n"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-p",
+									"text": " distributes grab-and-go meals and produce every Sunday from 4:00 to 5:00 p.m. (3044 Longfellow Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-en-u",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-en-r",
+									"href": "https://minnehaha.org/foodministries.html"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-s",
+									"text": "MINNEHAHA UNITED METHODIST CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-en-r"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-en-t",
+									"text": " distributes produce and other groceries every fourth Saturday from 9:00 to 10:00 a.m. through its MinneHarvest program. (3701 E. 50th St., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "image",
+							"_key": "pages-get-food-en-v",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-nondiscrimination",
+				"slug": "nondiscrimination",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Nondiscrimination Statement",
+					"description": "The USDA nondiscrimination statement and Minnesota data privacy notice (Tennessen warning) for Minnehaha Food Shelf.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-1",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-0",
+									"text": "from the U.S. Department of Agriculture",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-2",
+									"text": "In accordance with Federal civil rights law and U.S. Department of Agriculture (USDA) civil rights regulations and policies, the USDA, its Agencies, offices, and employees, and institutions participating in or administering USDA programs are prohibited from discriminating based on race, color, national origin, religion, sex, gender identity (including gender expression), sexual orientation, disability, age, marital status, family/parental status, income derived from a public assistance program, political beliefs, or reprisal or retaliation for prior civil rights activity, in any program or activity conducted or funded by USDA (not all bases apply to all programs). Remedies and complaint filing deadlines vary by program or incident.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-5",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-4",
+									"text": "Persons with disabilities who require alternative means of communication for program information (e.g., Braille, large print, audiotape, American Sign Language, etc.) should contact the responsible Agency or USDA’s TARGET Center at (202) 720-2600 (voice and TTY) or contact USDA through the Federal Relay Service at (800) 877-8339. Additionally, program information may be made available in languages other than English.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-7",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-6",
+									"text": "To file a program discrimination complaint, complete the USDA Program Discrimination Complaint Form, AD-3027, found online at How to File a Program Discrimination Complaint and at any USDA office or write a letter addressed to USDA and provide in the letter all of the information requested in the form. To request a copy of the complaint form, call (866) 632-9992. Submit your completed form or letter to USDA by:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-b",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-8",
+									"text": "(1) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-9",
+									"text": "mail:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-a",
+									"text": " U.S. Department of Agriculture, Office of the Assistant Secretary for Civil Rights, 1400 Independence Av. SW., Washington, D.C. 20250-9410;",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-f",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-c",
+									"text": "(2) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-d",
+									"text": "fax:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-e",
+									"text": " (202) 690-7442; or",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-j",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-g",
+									"text": "(3) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-h",
+									"text": "email:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-i",
+									"text": " program.intake@usda.gov.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-l",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-k",
+									"text": "This institution is an equal opportunity provider.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-n",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-m",
+									"text": "Data Privacy Notice/Tennessen Warning",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-p",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-o",
+									"text": "from the Minnesota Department of Human Services",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-r",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-q",
+									"text": "You have rights under the Minnesota Government Data Practices Act. This Act protects your privacy. We are asking for information so we can: tell you apart from other persons with a similar name and decide how to serve you best.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-t",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-s",
+									"text": "Generally, you are not required to give us the information. However, without it, we can’t report accurate statistics which affects funding. The law allows us to share your information (the number of children, adults, and seniors in your household and the number of pounds of food received) with staff from the Department of Human Services, Hunger Solutions Minnesota, and your regional food bank.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-en-v",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-en-u",
+									"text": "You also have the right to copies of information we have about you. If you do not understand the information, it may be explained to you. If you do not think the information is accurate or complete, please correct it with the food shelf staff.",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-volunteer",
+				"slug": "volunteer",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Volunteer at Minnehaha Food Shelf",
+					"description": "Volunteer opportunities at Minnehaha Food Shelf in south Minneapolis.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-0",
+									"text": "Emergency food assistance programs like ours are experiencing unprecedented and continuing surge in demand. In just the past few years, the number of households we serve weekly has grown dramatically — and it’s still climbing. Meeting that need means we need more volunteers.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-2",
+									"text": "We need help with unloading trucks, food distribution setup and takedown, inventory management, registering and checking in clients, Spanish-English interpretation, community outreach, volunteer coordination, social media support, and other vital tasks. Many roles require being on-site during our open hours (Tuesdays, 10:00 a.m.–3:00 p.m.), but others don’t.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-5",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-4",
+									"text": "Ready to get started? Here’s how:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-8",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-6",
+									"text": "New Volunteers:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-7",
+									"text": " Start with our monthly Volunteer Orientation — a site tour and onboarding session where you’ll meet our team, see how we operate, and learn how to sign up for shifts. No experience necessary!",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-b",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-en-9",
+									"href": "https://www.signupgenius.com/go/60B0944A9AB22A4F49-64861005-volunteer#/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-a",
+									"text": "Click Here to Sign Up For Orientation",
+									"marks": [
+										"pages-volunteer-en-9",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-e",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-c",
+									"text": "Looking for a flexible way to help?",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-d",
+									"text": " Join us Monday mornings between 6:30 and 10:00 for staging and receiving!",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-h",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-en-f",
+									"href": "https://www.signupgenius.com/go/60B0944A9AB22A4F49-63947907-minnehaha#/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-g",
+									"text": "Click Here to Sign Up Monday Shift",
+									"marks": [
+										"pages-volunteer-en-f",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-j",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-i",
+									"text": "A note from our manager",
+									"marks": [
+										"em",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-l",
+							"style": "blockquote",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-k",
+									"text": "“Our volunteers are the heart of Minnehaha Food Shelf. As the need in our community keeps growing, so does our reliance on people willing to show up — whether that’s once a month or every single week. Every hour you give means a neighbor experiencing food insecurity gets to bring home groceries to feed their family. I’d love for you to join us!”",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-n",
+							"style": "blockquote",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-m",
+									"text": "— Britt, Food Shelf Manager",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-s",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-en-p",
+									"href": "mailto:foodshelfvolunteers@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-o",
+									"text": "Questions, or want more info before signing up? Email us at: ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-q",
+									"text": "foodshelfvolunteers@minnehaha.org",
+									"marks": [
+										"pages-volunteer-en-p"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-r",
+									"text": ".",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-en-u",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-en-t",
+									"text": "Regretfully, we are unable to accommodate drop-in support at this time.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-volunteer-en-v",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-about-es",
+				"slug": "about",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-about",
+				"data": {
+					"title": "Bienvenidos",
+					"description": "Acerca de Minnehaha Food Shelf, una coalición de siete iglesias del sur de Minneapolis que combate la inseguridad alimentaria desde hace más de 20 años.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-about-es-m",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-es-1",
+									"href": "https://minnehaha.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-4",
+									"href": "https://www.lakenokomischurch.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-7",
+									"href": "https://livingtable.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-a",
+									"href": "https://graceepiscopalmpls.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-d",
+									"href": "https://www.stpeders.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-g",
+									"href": "https://minnehahacommunion.org/"
+								},
+								{
+									"_type": "link",
+									"_key": "pages-about-es-j",
+									"href": "https://www.spiritcatholiccommunity.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-0",
+									"text": "Minnehaha Food Shelf se fundó hace más de 20 años y es una coalición de siete iglesias del sur de Minneapolis: ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-2",
+									"text": "MINNEHAHA UNITED METHODIST CHURCH",
+									"marks": [
+										"pages-about-es-1"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-3",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-5",
+									"text": "LAKE NOKOMIS LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-es-4"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-6",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-8",
+									"text": "LIVING TABLE UNITED CHURCH OF CHRIST",
+									"marks": [
+										"pages-about-es-7"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-9",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-b",
+									"text": "GRACE EPISCOPAL CHURCH",
+									"marks": [
+										"pages-about-es-a"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-c",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-e",
+									"text": "ST. PEDER’S LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-es-d"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-f",
+									"text": ", ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-h",
+									"text": "MINNEHAHA COMMUNION LUTHERAN CHURCH",
+									"marks": [
+										"pages-about-es-g"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-i",
+									"text": " y ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-k",
+									"text": "SPIRIT CATHOLIC COMMUNITY",
+									"marks": [
+										"pages-about-es-j"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-l",
+									"text": ". Todos son bienvenidos independientemente de su afiliación religiosa.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-es-n",
+							"asset": {
+								"_ref": "01K0000000DYZ5QFKYZTCNYFP0",
+								"url": "/_emdash/api/media/file/01K0000000DYZ5QFKYZTCNYFP0.jpg",
+								"provider": "local"
+							},
+							"alt": "Voluntarios y vecinos en Minnehaha Food Shelf",
+							"width": 982,
+							"height": 550
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-p",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-o",
+									"text": "La demanda sigue creciendo",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-r",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-q",
+									"text": "Durante 52 martes de 2023, Minnehaha Food Shelf atendió a 42 240 personas: 19 669 niños, 19 229 adultos y 3342 personas mayores. La demanda aumentó drásticamente a lo largo de 2023. En enero, Minnehaha Food Shelf atendió a 818 hogares. En julio, el recuento mensual había aumentado a 949 hogares, y durante el mes de diciembre, Minnehaha Food Shelf atendió a 1.020 hogares. Para seguir satisfaciendo esa creciente demanda, Minnehaha Food Shelf necesita su apoyo.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-t",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-s",
+									"text": "¿Sabía usted que?",
+									"marks": [
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-v",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-u",
+									"text": "1 de cada 10 hogares de Minnesota se ve afectado por el hambre.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-x",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-w",
+									"text": "Minnesota registró más de 7,5 millones de visitas a los estantes de alimentos en 2023, un aumento del 30 por ciento con respecto a 2022.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-z",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-y",
+									"text": "Más de 50 millones de estadounidenses, incluidos más de 13 millones de niños, viven en hogares que no tienen acceso constante a alimentos nutritivos.",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-11",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-10",
+									"text": "Más de 5 millones de adultos mayores estadounidenses, de 60 años o más, enfrentan hambre. (Fuente: Second Harvest Heartland, Star Tribune)",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-13",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-12",
+									"text": "Haga una donación a Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-15",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-14",
+									"text": "Su apoyo financiero es vital en la lucha contra la inseguridad alimentaria. Haga clic en el botón a continuación para donar mediante tarjeta de crédito, tarjeta de débito o PayPal. (Si prefiere donar con cheque, envíelo a Minnehaha Food Shelf, 3701 E. 50th St., Minneapolis, MN 55417). Gracias.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-es-16",
+							"asset": {
+								"_ref": "01K0000000C2H446DBR4CTZN77",
+								"url": "/_emdash/api/media/file/01K0000000C2H446DBR4CTZN77.jpg",
+								"provider": "local"
+							},
+							"alt": "Done con PayPal",
+							"width": 300,
+							"height": 131,
+							"link": {
+								"href": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+								"blank": true
+							}
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-18",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-17",
+									"text": "Done a Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1a",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-19",
+									"text": "Su donación de alimentos no perecederos ayudará a combatir la inseguridad alimentaria en Minneapolis. Busque los grandes contenedores azules en la Iglesia Metodista Unida Minnehaha y Oxendales (5025 34th Ave. S., Minneapolis). Los productos de cuidado personal también son bienvenidos.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1c",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1b",
+									"text": "Sea voluntario en Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1h",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-es-1e",
+									"href": "mailto:foodshelfvolunteers@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1d",
+									"text": "Considere ofrecer su tiempo y experiencia como voluntario. Necesitamos ayuda con la descarga de camiones, la instalación y el desmontaje de la distribución de alimentos, la gestión de inventario, el registro/registro de clientes, la interpretación del español al inglés, la extensión comunitaria, la coordinación de voluntarios, el apoyo en las redes sociales y otras tareas vitales. Muchos puestos de voluntariado requieren estar en el sitio durante nuestro horario de atención (martes de 10:00 a. m. a 3:00 p. m.), pero otros no. Para obtener más información, comuníquese con ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1f",
+									"text": "foodshelfvolunteers@minnehaha.org",
+									"marks": [
+										"pages-about-es-1e"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1g",
+									"text": ".",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-es-1i",
+							"asset": {
+								"_ref": "01K0000000CZ7QWTQNR2ZXRQFT",
+								"url": "/_emdash/api/media/file/01K0000000CZ7QWTQNR2ZXRQFT.jpg",
+								"provider": "local"
+							},
+							"alt": "Un camión de reparto de Second Harvest Heartland",
+							"width": 1000,
+							"height": 774
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1k",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1j",
+									"text": "Dos bancos de alimentos apoyan Minnehaha Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1m",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1l",
+									"text": "Un banco de alimentos actúa como mayorista, abasteciendo eficientemente grandes cantidades de alimentos (tanto donados como comprados) y luego poniéndolos a disposición de los estantes de alimentos locales.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1r",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-es-1o",
+									"href": "https://www.2harvest.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1n",
+									"text": "La fuente principal de alimentos en Minnehaha Food Shelf es ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1p",
+									"text": "SECOND HARVEST HEARTLAND",
+									"marks": [
+										"pages-about-es-1o"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1q",
+									"text": ". Es el banco de alimentos más grande de la región y atiende a 423 estantes de alimentos en Minnesota y el oeste de Wisconsin desde sus instalaciones de Brooklyn Park. En 2022, Second Harvest Heartland distribuyó casi 123 millones de libras de alimentos.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1w",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-about-es-1t",
+									"href": "https://www.thefoodgroupmn.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1s",
+									"text": "Minnehaha Food Shelf también está asociada con ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1u",
+									"text": "THE FOOD GROUP",
+									"marks": [
+										"pages-about-es-1t"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1v",
+									"text": ". La organización sin fines de lucro con sede en New Hope presta servicios a 224 estantes de alimentos y otras organizaciones en Minnesota. The Food Group distribuye productos y otros alimentos del Programa de Asistencia Alimentaria de Emergencia (TEFAP), una iniciativa de 43 años del Departamento de Agricultura de EE. UU. diseñada para combatir el hambre e impulsar los mercados agrícolas estadounidenses.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-about-es-1y",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-about-es-1x",
+									"text": "En 2024, Minnehaha Food Shelf gastará un promedio de $3,100 por semana en Second Harvest Heartland y Food Group.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-about-es-1z",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-area-served-es",
+				"slug": "area-served",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-area-served",
+				"data": {
+					"title": "Sirviendo a nuestro vecindario del sur de Minneapolis",
+					"description": "Minnehaha Food Shelf atiende los martes de 10:00 am a 3:00 pm en 3701 East 50th Street, Minneapolis.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-area-served-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-area-served-es-0",
+									"text": "Los martes, de 10:00 am a 3:00 pm, brindamos comida a nuestros vecinos en el sur de Minneapolis.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-area-served-es-6",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-area-served-es-2",
+									"text": "¿Preguntas?",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-es-3",
+									"text": " Si tiene preguntas o desea información adicional, haga clic en la pestaña ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-es-4",
+									"text": "Contáctenos",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-area-served-es-5",
+									"text": " arriba. Gracias.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-area-served-es-7",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-contact-es",
+				"slug": "contact",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-contact",
+				"data": {
+					"title": "Contáctenos",
+					"description": "Contacte a Minnehaha Food Shelf, 3701 East 50th Street, Minneapolis. Abierto los martes de 10:00 am a 3:00 pm.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-1",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-0",
+									"text": "3701 East 50th Street",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-2",
+									"text": "Minneapolis, MN 55417",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-8",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-contact-es-5",
+									"href": "https://www.google.com/maps/place/Minnehaha+United+Methodist+Church/@44.9122606,-93.2186204,17z/data=!3m1!4b1!4m6!3m5!1s0x87f628fdfa9d5cbf:0x1e01a06ebc6f8804!8m2!3d44.9122606!4d-93.2186204!16s%2Fg%2F1tvdkbv4?entry=ttu"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-4",
+									"text": "Haga clic ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-6",
+									"text": "AQUÍ",
+									"marks": [
+										"pages-contact-es-5"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-7",
+									"text": " para ubicar Minnehaha Food Shelf en Google Maps.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-b",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-contact-es-9",
+									"href": "mailto:foodshelf@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-a",
+									"text": "foodshelf@minnehaha.org",
+									"marks": [
+										"pages-contact-es-9"
+									]
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-contact-es-c",
+							"asset": {
+								"_ref": "01K0000000WF43R726MZ6RY5AZ",
+								"url": "/_emdash/api/media/file/01K0000000WF43R726MZ6RY5AZ.jpg",
+								"provider": "local"
+							},
+							"alt": "Edificio de la Iglesia Metodista Unida Minnehaha",
+							"width": 1000,
+							"height": 782
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-e",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-d",
+									"text": "Horas de operación",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-g",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-f",
+									"text": "Martes de 10:00 am a 3:00 pm",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-i",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-h",
+									"text": "Gerente",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-contact-es-k",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-contact-es-j",
+									"text": "Britt Reuter",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-get-food-es",
+				"slug": "get-food",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-get-food",
+				"data": {
+					"title": "Si necesita ayuda ahora mismo",
+					"description": "Encuentre recursos alimentarios cerca de Minnehaha Food Shelf en el sur de Minneapolis, incluido United Way 2-1-1 y comidas para llevar.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-6",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-3",
+									"href": "https://211unitedway.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-0",
+									"text": "United Way 2-1-1 proporciona información gratuita y confidencial sobre dónde conseguir alimentos, ropa, atención médica, asistencia legal y otros recursos. ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-1",
+									"text": "Si necesita ayuda ahora mismo, llame al 2-1-1",
+									"marks": [
+										"em",
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-2",
+									"text": " (o al número gratuito 800-543-7709). Los centros de llamadas cuentan con personal las 24 horas del día, los siete días de la semana, o visite ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-4",
+									"text": "211UNITEDWAY.ORG",
+									"marks": [
+										"pages-get-food-es-3"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-5",
+									"text": ". Otras fuentes de alimentos cercanas incluyen:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-a",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-7",
+									"href": "https://www.hope-pc.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-8",
+									"text": "HOPE PRESBYTERIAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-es-7"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-9",
+									"text": " ofrece comidas para llevar todos los días de la semana de 5:00 a 6:00 p.m. (7132 Portland Av. S., Richfield).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-e",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-b",
+									"href": "https://nokomisheights.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-c",
+									"text": "NOKOMIS HEIGHTS LUTHERAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-es-b"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-d",
+									"text": " ofrece comidas para llevar todos los miércoles de 5:00 a 6:00 p.m. (5300 10th Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-i",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-f",
+									"href": "https://mtolivet.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-g",
+									"text": "MOUNT OLIVET LUTHERAN CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-es-f"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-h",
+									"text": " ofrece comidas para llevar todos los jueves de 4:00 a 5:00 p.m. (5025 Knox Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-m",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-j",
+									"href": "https://centralusa.salvationarmy.org/usc/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-k",
+									"text": "SOUTH MINNEAPOLIS SALVATION ARMY",
+									"marks": [
+										"strong",
+										"pages-get-food-es-j"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-l",
+									"text": " sirve un almuerzo caliente gratuito todos los lunes, martes y miércoles desde el mediodía hasta la 1:00 p.m. (1604 E. Lake St., Minneapolis)",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-q",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-n",
+									"href": "https://firstnationskitchen.org/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-o",
+									"text": "FIRST NATIONS KITCHEN",
+									"marks": [
+										"strong",
+										"pages-get-food-es-n"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-p",
+									"text": " distribuye comidas y productos para llevar todos los domingos de 4 :00 a 5:00 p.m. (3044 Longfellow Av. S., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "pages-get-food-es-u",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-get-food-es-r",
+									"href": "https://minnehaha.org/foodministries.html"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-s",
+									"text": "MINNEHAHA UNITED METHODIST CHURCH",
+									"marks": [
+										"strong",
+										"pages-get-food-es-r"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-get-food-es-t",
+									"text": " distribuye productos agrícolas y otros comestibles cada cuarto sábado de 9:00 a 10:00 a.m. a través de su programa MinneHarvest. (3701 E. 50th St., Minneapolis).",
+									"marks": []
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "image",
+							"_key": "pages-get-food-es-v",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-nondiscrimination-es",
+				"slug": "nondiscrimination",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-nondiscrimination",
+				"data": {
+					"title": "Declaración de no discriminación",
+					"description": "Declaración de no discriminación del USDA y aviso de privacidad de datos (advertencia Tennessen) de Minnehaha Food Shelf.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-1",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-0",
+									"text": "del Departamento de Agricultura de EE. UU.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-2",
+									"text": "De acuerdo con la ley federal de derechos civiles y las regulaciones y políticas de derechos civiles del Departamento de Agricultura de los EE. UU. (USDA), el USDA, sus agencias, oficinas y empleados, y las instituciones que participan o administran programas del USDA tienen prohibido discriminar por motivos de raza, color, origen nacional, religión, sexo, identidad de género (incluida la expresión de género), orientación sexual, discapacidad, edad, estado civil, estado familiar/parental, ingresos derivados de un programa de asistencia pública, creencias políticas o represalias por actividades anteriores de derechos civiles. , en cualquier programa o actividad realizada o financiada por el USDA (no todas las bases se aplican a todos los programas). Los recursos y los plazos para presentar quejas varían según el programa o incidente.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-5",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-4",
+									"text": "Las personas con discapacidades que requieran medios alternativos de comunicación para obtener información del programa (por ejemplo, Braille, letra grande, cintas de audio, lenguaje de señas americano, etc.) deben comunicarse con la agencia responsable o el Centro TARGET del USDA al (202) 720-2600 (voz y TTY). o comuníquese con el USDA a través del Servicio Federal de Retransmisión al (800) 877-8339. Además, la información del programa puede estar disponible en otros idiomas además del inglés.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-7",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-6",
+									"text": "Para presentar una queja por discriminación en el programa, complete el Formulario de queja por discriminación del programa del USDA, AD-3027, que se encuentra en línea en Cómo presentar una queja por discriminación en el programa y en cualquier oficina del USDA o escriba una carta dirigida al USDA y proporcione en la carta toda la información. solicitado en el formulario. Para solicitar una copia del formulario de queja, llame al (866) 632-9992. Envíe su formulario o carta completo al USDA por:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-b",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-8",
+									"text": "(1) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-9",
+									"text": "correo:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-a",
+									"text": " U.S. Department of Agriculture, Office of the Assistant Secretary for Civil Rights, 1400 Independence Av. SW., Washington, D.C. 20250-9410;",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-f",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-c",
+									"text": "(2) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-d",
+									"text": "fax:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-e",
+									"text": " (202) 690-7442; o",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-j",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-g",
+									"text": "(3) ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-h",
+									"text": "correo electrónico:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-i",
+									"text": " program.intake@usda.gov.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-l",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-k",
+									"text": "Esta institución es un proveedor de igualdad de oportunidades.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-n",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-m",
+									"text": "Aviso de privacidad de datos/Advertencia de Tennessee",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-p",
+							"style": "h3",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-o",
+									"text": "del Departamento de Servicios Humanos de Minnesota",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-r",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-q",
+									"text": "Tiene derechos según la Ley de Prácticas de Datos del Gobierno de Minnesota. Esta Ley protege su privacidad. Solicitamos información para poder: diferenciarlo de otras personas con un nombre similar y decidir cómo brindarle un mejor servicio.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-t",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-s",
+									"text": "Generalmente, no está obligado a proporcionarnos la información. Sin embargo, sin él, no podemos informar estadísticas precisas que afecten a la financiación. La ley nos permite compartir su información (la cantidad de niños, adultos y personas mayores en su hogar y la cantidad de libras de alimentos recibidos) con el personal del Departamento de Servicios Humanos, Hunger Solutions Minnesota y su banco de alimentos regional.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-nondiscrimination-es-v",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-nondiscrimination-es-u",
+									"text": "También tiene derecho a obtener copias de la información que tenemos sobre usted. Si no comprende la información, es posible que se la expliquen. Si cree que la información no es precisa o completa, corríjala con el personal del estante de alimentos.",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "pages-volunteer-es",
+				"slug": "volunteer",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "pages-volunteer",
+				"data": {
+					"title": "Voluntariado en Minnehaha Food Shelf",
+					"description": "Oportunidades de voluntariado en Minnehaha Food Shelf, en el sur de Minneapolis.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-0",
+									"text": "Los programas de asistencia alimentaria de emergencia como el nuestro están experimentando un aumento continuo y sin precedentes de la demanda. En solo unos pocos años, el número de hogares a los que atendemos cada semana ha crecido drásticamente, y sigue aumentando. Para satisfacer esa necesidad, necesitamos más voluntarios.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-3",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-2",
+									"text": "Necesitamos ayuda con la descarga de camiones, la instalación y el desmontaje de la distribución de alimentos, la gestión de inventario, el registro y la recepción de clientes, la interpretación español-inglés, el contacto con la comunidad, la coordinación de voluntarios, el apoyo en redes sociales y otras tareas vitales. Muchos puestos requieren estar en el lugar durante nuestro horario de atención (martes, de 10:00 a. m. a 3:00 p. m.), pero otros no.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-5",
+							"style": "h2",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-4",
+									"text": "¿Listo para empezar? Así es como:",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-8",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-6",
+									"text": "Voluntarios nuevos:",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-7",
+									"text": " Comience con nuestra Orientación mensual para voluntarios: un recorrido por el lugar y una sesión de incorporación en la que conocerá a nuestro equipo, verá cómo trabajamos y aprenderá a inscribirse en los turnos. ¡No se necesita experiencia!",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-b",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-es-9",
+									"href": "https://www.signupgenius.com/go/60B0944A9AB22A4F49-64861005-volunteer#/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-a",
+									"text": "Haga clic aquí para inscribirse en la orientación",
+									"marks": [
+										"pages-volunteer-es-9",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-e",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-c",
+									"text": "¿Busca una forma flexible de ayudar?",
+									"marks": [
+										"strong"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-d",
+									"text": " ¡Únase a nosotros los lunes por la mañana, de 6:30 a 10:00, para la preparación y recepción de mercancía!",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-h",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-es-f",
+									"href": "https://www.signupgenius.com/go/60B0944A9AB22A4F49-63947907-minnehaha#/"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-g",
+									"text": "Haga clic aquí para inscribirse en el turno del lunes",
+									"marks": [
+										"pages-volunteer-es-f",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-j",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-i",
+									"text": "Unas palabras de nuestra gerente",
+									"marks": [
+										"em",
+										"strong"
+									]
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-l",
+							"style": "blockquote",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-k",
+									"text": "“Nuestros voluntarios son el corazón de Minnehaha Food Shelf. A medida que la necesidad en nuestra comunidad sigue creciendo, también crece nuestra dependencia de personas dispuestas a presentarse, ya sea una vez al mes o todas las semanas. Cada hora que usted dedica significa que un vecino que enfrenta inseguridad alimentaria puede llevar a casa alimentos para su familia. ¡Me encantaría que se uniera a nosotros!”",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-n",
+							"style": "blockquote",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-m",
+									"text": "— Britt, gerente del Food Shelf",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-s",
+							"style": "normal",
+							"markDefs": [
+								{
+									"_type": "link",
+									"_key": "pages-volunteer-es-p",
+									"href": "mailto:foodshelfvolunteers@minnehaha.org"
+								}
+							],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-o",
+									"text": "¿Preguntas, o desea más información antes de inscribirse? Escríbanos a: ",
+									"marks": []
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-q",
+									"text": "foodshelfvolunteers@minnehaha.org",
+									"marks": [
+										"pages-volunteer-es-p"
+									]
+								},
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-r",
+									"text": ".",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "pages-volunteer-es-u",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "pages-volunteer-es-t",
+									"text": "Lamentablemente, no podemos ofrecer asistencia sin cita previa en este momento.",
+									"marks": []
+								}
+							]
+						},
+						{
+							"_type": "image",
+							"_key": "pages-volunteer-es-v",
+							"asset": {
+								"_ref": "01K000000056GQMMQNQ33AGCES",
+								"url": "/_emdash/api/media/file/01K000000056GQMMQNQ33AGCES.png",
+								"provider": "local"
+							},
+							"alt": "Find us on Facebook",
+							"width": 1024,
+							"height": 340,
+							"link": {
+								"href": "https://www.facebook.com/MinnehahaFoodShelf/",
+								"blank": true
+							}
+						}
+					]
+				}
+			}
+		],
+		"cards": [
+			{
+				"id": "cards-get-food",
+				"slug": "get-food",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Get food",
+					"weight": 10,
+					"image": {
+						"provider": "local",
+						"id": "01K00000002P0YCAPBGX2SM5PW",
+						"alt": "Get food",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-GET-FOOD.jpg",
+						"meta": {
+							"storageKey": "01K00000002P0YCAPBGX2SM5PW.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-get-food-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-get-food-en-0",
+									"text": "Click here to find food resources in our neighborhood.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/get-food"
+				}
+			},
+			{
+				"id": "cards-volunteer",
+				"slug": "volunteer",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Volunteer",
+					"weight": 20,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000F921DHXKMVQYJ6RW",
+						"alt": "Volunteer",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-VOLUNTEER.jpg",
+						"meta": {
+							"storageKey": "01K0000000F921DHXKMVQYJ6RW.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-volunteer-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-volunteer-en-0",
+									"text": "Click here to learn about volunteer opportunities at Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/volunteer"
+				}
+			},
+			{
+				"id": "cards-donate",
+				"slug": "donate",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Donate",
+					"weight": 30,
+					"image": {
+						"provider": "local",
+						"id": "01K00000004XTSRKX52Z6Q2TDS",
+						"alt": "Donate",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-DONATE.jpg",
+						"meta": {
+							"storageKey": "01K00000004XTSRKX52Z6Q2TDS.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-donate-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-donate-en-0",
+									"text": "Click here to securely donate to Minnehaha Food Shelf via credit card, debit card or PayPal.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-tuesdays",
+				"slug": "tuesdays",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "All are welcome",
+					"weight": 40,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000WSVCJT3QEYVQ28WN",
+						"alt": "All are welcome",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-ALLAREWELCOME.jpg",
+						"meta": {
+							"storageKey": "01K0000000WSVCJT3QEYVQ28WN.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-tuesdays-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-tuesdays-en-0",
+									"text": "Join us every Tuesday from 10:00 a.m. to 3:00 p.m.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/area-served"
+				}
+			},
+			{
+				"id": "cards-about",
+				"slug": "about",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Our mission",
+					"weight": 50,
+					"image": {
+						"provider": "local",
+						"id": "01K000000037FJ5WNX8J9PVW9Z",
+						"alt": "Our mission",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-OUR-MISSION.jpg",
+						"meta": {
+							"storageKey": "01K000000037FJ5WNX8J9PVW9Z.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-about-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-about-en-0",
+									"text": "Click here to find out more about Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/about"
+				}
+			},
+			{
+				"id": "cards-time-lapse-video",
+				"slug": "time-lapse-video",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Time-lapse video of Minnehaha Food Shelf",
+					"weight": 60,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000P25SKXVJ9CXYD2MQ",
+						"alt": "Time-lapse video of Minnehaha Food Shelf",
+						"width": 750,
+						"height": 750,
+						"mimeType": "image/jpeg",
+						"filename": "Link-to-Time-Lapse-Video-2026.jpg",
+						"meta": {
+							"storageKey": "01K0000000P25SKXVJ9CXYD2MQ.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-time-lapse-video-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-time-lapse-video-en-0",
+									"text": "CLICK HERE to watch a time-lapse video of what it’s like at Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.youtube.com/watch?v=M69UqIW8uWE",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-newsletter",
+				"slug": "newsletter",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Food Shelf newsletter",
+					"weight": 70,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000NCAZMV4XT7FP3HN1",
+						"alt": "Food Shelf newsletter",
+						"width": 1250,
+						"height": 1046,
+						"mimeType": "image/jpeg",
+						"filename": "Food-Shelf-Newsletter.jpg",
+						"meta": {
+							"storageKey": "01K0000000NCAZMV4XT7FP3HN1.jpg"
+						}
+					},
+					"link": "https://mailchi.mp/2646ecc21798/minnehaha-food-shelf-newsletter-march-18156790?e=bd9d421875",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-pasta-dinner",
+				"slug": "pasta-dinner",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Pasta dinner tickets",
+					"weight": 80,
+					"expires": "2026-10-23T00:30:00.000Z",
+					"image": {
+						"provider": "local",
+						"id": "01K0000000JBQB4HYKG2CAY8JZ",
+						"alt": "Pasta dinner tickets",
+						"width": 720,
+						"height": 720,
+						"mimeType": "image/jpeg",
+						"filename": "Pasta-Dinner-2026-Tickets.jpg",
+						"meta": {
+							"storageKey": "01K0000000JBQB4HYKG2CAY8JZ.jpg"
+						}
+					},
+					"link": "https://ticketstripe.com/events/473109416619331",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-hours",
+				"slug": "hours",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Food shelf hours",
+					"weight": 90,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000QW9K57Q1TTG474ZV",
+						"alt": "Food shelf hours",
+						"width": 600,
+						"height": 399,
+						"mimeType": "image/jpeg",
+						"filename": "foodshelfhours.jpg",
+						"meta": {
+							"storageKey": "01K0000000QW9K57Q1TTG474ZV.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "cards-contact",
+				"slug": "contact",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Contact us",
+					"weight": 100,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000VPFKYE594KMDA5Y4",
+						"alt": "Contact us",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-CONTACT-US.jpg",
+						"meta": {
+							"storageKey": "01K0000000VPFKYE594KMDA5Y4.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-contact-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-contact-en-0",
+									"text": "Click here to contact Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/contact"
+				}
+			},
+			{
+				"id": "cards-thank-you",
+				"slug": "thank-you",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Thank you",
+					"weight": 110,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000M0MH3VTZZ620WX1N",
+						"alt": "Thank you",
+						"width": 750,
+						"height": 971,
+						"mimeType": "image/jpeg",
+						"filename": "Thank You.jpg",
+						"meta": {
+							"storageKey": "01K0000000M0MH3VTZZ620WX1N.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "cards-newsletter-signup",
+				"slug": "newsletter-signup",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Subscribe to our newsletter",
+					"weight": 120,
+					"image": {
+						"provider": "local",
+						"id": "01K00000000JTZQ6NMBS17F66W",
+						"alt": "Subscribe to our newsletter",
+						"width": 340,
+						"height": 234,
+						"mimeType": "image/png",
+						"filename": "enewssignup.png",
+						"meta": {
+							"storageKey": "01K00000000JTZQ6NMBS17F66W.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-newsletter-signup-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-newsletter-signup-en-0",
+									"text": "Click here to subscribe.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://mailchi.mp/895b5cd7fe13/minnehahafoodshelfnewslettersignup",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-monthly-giving",
+				"slug": "monthly-giving",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "33 cents a day",
+					"weight": 130,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000JZSBZZ83XG5EFN34",
+						"alt": "33 cents a day",
+						"width": 3445,
+						"height": 3445,
+						"mimeType": "image/png",
+						"filename": "33 cent logo_w_yellowcircle.png",
+						"meta": {
+							"storageKey": "01K0000000JZSBZZ83XG5EFN34.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-monthly-giving-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-monthly-giving-en-0",
+									"text": "Your recurring donation of 33 cents a day – $10 a month – will help us fight food insecurity in our community. Click here to donate.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-blue-bins",
+				"slug": "blue-bins",
+				"status": "published",
+				"locale": "en",
+				"data": {
+					"title": "Blue donation bin",
+					"weight": 140,
+					"image": {
+						"provider": "local",
+						"id": "01K000000082X0820PHDZ5JXA3",
+						"alt": "Blue donation bin",
+						"width": 432,
+						"height": 540,
+						"mimeType": "image/png",
+						"filename": "BlueBarrel.png",
+						"meta": {
+							"storageKey": "01K000000082X0820PHDZ5JXA3.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-blue-bins-en-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-blue-bins-en-0",
+									"text": "We welcome donations of non-perishable food items and personal care products. Drop them in the blue bins at Minnehaha United Methodist Church. Thank you!",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "cards-get-food-es",
+				"slug": "get-food",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-get-food",
+				"data": {
+					"title": "Conseguir comida",
+					"weight": 10,
+					"image": {
+						"provider": "local",
+						"id": "01K00000006YE4EC4RZ95BJYV7",
+						"alt": "Conseguir comida",
+						"width": 550,
+						"height": 310,
+						"mimeType": "image/jpeg",
+						"filename": "SPA-GET-FOOD_sm.jpg",
+						"meta": {
+							"storageKey": "01K00000006YE4EC4RZ95BJYV7.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-get-food-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-get-food-es-0",
+									"text": "Haga clic aquí para encontrar recursos alimentarios en el sur de Minneapolis.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/es/get-food"
+				}
+			},
+			{
+				"id": "cards-volunteer-es",
+				"slug": "volunteer",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-volunteer",
+				"data": {
+					"title": "Voluntario",
+					"weight": 20,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000DCAECNJ19QDX19C8",
+						"alt": "Voluntario",
+						"width": 550,
+						"height": 310,
+						"mimeType": "image/jpeg",
+						"filename": "SPA-VOLUNTEER_sm.jpg",
+						"meta": {
+							"storageKey": "01K0000000DCAECNJ19QDX19C8.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-volunteer-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-volunteer-es-0",
+									"text": "Haga clic aquí para conocer las oportunidades de voluntariado en Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/es/volunteer"
+				}
+			},
+			{
+				"id": "cards-donate-es",
+				"slug": "donate",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-donate",
+				"data": {
+					"title": "Donar",
+					"weight": 30,
+					"image": {
+						"provider": "local",
+						"id": "01K00000004XTSRKX52Z6Q2TDS",
+						"alt": "Donar",
+						"width": 600,
+						"height": 338,
+						"mimeType": "image/jpeg",
+						"filename": "1Food-Shelf-DONATE.jpg",
+						"meta": {
+							"storageKey": "01K00000004XTSRKX52Z6Q2TDS.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-donate-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-donate-es-0",
+									"text": "Haga clic aquí para donar de forma segura a Minnehaha Food Shelf mediante tarjeta de crédito, tarjeta de débito o PayPal.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-tuesdays-es",
+				"slug": "tuesdays",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-tuesdays",
+				"data": {
+					"title": "Todos son bienvenidos",
+					"weight": 40,
+					"image": {
+						"provider": "local",
+						"id": "01K000000094PKN7C6KBYNS8MY",
+						"alt": "Todos son bienvenidos",
+						"width": 550,
+						"height": 310,
+						"mimeType": "image/jpeg",
+						"filename": "SPA-ALL-ARE-WELCOME_sm.jpg",
+						"meta": {
+							"storageKey": "01K000000094PKN7C6KBYNS8MY.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-tuesdays-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-tuesdays-es-0",
+									"text": "Únete a nosotros todos los martes de 10:00 am a 3:00 p.m.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/es/area-served"
+				}
+			},
+			{
+				"id": "cards-about-es",
+				"slug": "about",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-about",
+				"data": {
+					"title": "Nuestra misión",
+					"weight": 50,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000A032JB64TAK5MBY8",
+						"alt": "Nuestra misión",
+						"width": 550,
+						"height": 310,
+						"mimeType": "image/jpeg",
+						"filename": "SPA-OUR-MISSION_sm.jpg",
+						"meta": {
+							"storageKey": "01K0000000A032JB64TAK5MBY8.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-about-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-about-es-0",
+									"text": "Haga clic aquí para obtener más información sobre Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/es/about"
+				}
+			},
+			{
+				"id": "cards-time-lapse-video-es",
+				"slug": "time-lapse-video",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-time-lapse-video",
+				"data": {
+					"title": "Video time-lapse de Minnehaha Food Shelf",
+					"weight": 60,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000P25SKXVJ9CXYD2MQ",
+						"alt": "Video time-lapse de Minnehaha Food Shelf",
+						"width": 750,
+						"height": 750,
+						"mimeType": "image/jpeg",
+						"filename": "Link-to-Time-Lapse-Video-2026.jpg",
+						"meta": {
+							"storageKey": "01K0000000P25SKXVJ9CXYD2MQ.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-time-lapse-video-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-time-lapse-video-es-0",
+									"text": "HAGA CLIC AQUÍ para ver un video time-lapse de cómo es un día en Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.youtube.com/watch?v=M69UqIW8uWE",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-hours-es",
+				"slug": "hours",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-hours",
+				"data": {
+					"title": "Horario del Food Shelf",
+					"weight": 70,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000QW9K57Q1TTG474ZV",
+						"alt": "Horario del Food Shelf",
+						"width": 600,
+						"height": 399,
+						"mimeType": "image/jpeg",
+						"filename": "foodshelfhours.jpg",
+						"meta": {
+							"storageKey": "01K0000000QW9K57Q1TTG474ZV.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "cards-contact-es",
+				"slug": "contact",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-contact",
+				"data": {
+					"title": "Contáctenos",
+					"weight": 80,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000A56TJC2M852DMQTC",
+						"alt": "Contáctenos",
+						"width": 550,
+						"height": 310,
+						"mimeType": "image/jpeg",
+						"filename": "SPA-CONTACT-US_sm.jpg",
+						"meta": {
+							"storageKey": "01K0000000A56TJC2M852DMQTC.jpg"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-contact-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-contact-es-0",
+									"text": "Haga clic aquí para comunicarse con Minnehaha Food Shelf.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "/es/contact"
+				}
+			},
+			{
+				"id": "cards-thank-you-es",
+				"slug": "thank-you",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-thank-you",
+				"data": {
+					"title": "Gracias",
+					"weight": 90,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000M0MH3VTZZ620WX1N",
+						"alt": "Gracias",
+						"width": 750,
+						"height": 971,
+						"mimeType": "image/jpeg",
+						"filename": "Thank You.jpg",
+						"meta": {
+							"storageKey": "01K0000000M0MH3VTZZ620WX1N.jpg"
+						}
+					}
+				}
+			},
+			{
+				"id": "cards-newsletter-signup-es",
+				"slug": "newsletter-signup",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-newsletter-signup",
+				"data": {
+					"title": "Suscríbase a nuestro boletín",
+					"weight": 100,
+					"image": {
+						"provider": "local",
+						"id": "01K00000000JTZQ6NMBS17F66W",
+						"alt": "Suscríbase a nuestro boletín",
+						"width": 340,
+						"height": 234,
+						"mimeType": "image/png",
+						"filename": "enewssignup.png",
+						"meta": {
+							"storageKey": "01K00000000JTZQ6NMBS17F66W.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-newsletter-signup-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-newsletter-signup-es-0",
+									"text": "Haga clic aquí para suscribirse.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://mailchi.mp/895b5cd7fe13/minnehahafoodshelfnewslettersignup",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-monthly-giving-es",
+				"slug": "monthly-giving",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-monthly-giving",
+				"data": {
+					"title": "33 centavos al día",
+					"weight": 110,
+					"image": {
+						"provider": "local",
+						"id": "01K0000000JZSBZZ83XG5EFN34",
+						"alt": "33 centavos al día",
+						"width": 3445,
+						"height": 3445,
+						"mimeType": "image/png",
+						"filename": "33 cent logo_w_yellowcircle.png",
+						"meta": {
+							"storageKey": "01K0000000JZSBZZ83XG5EFN34.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-monthly-giving-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-monthly-giving-es-0",
+									"text": "Su donación recurrente de 33 centavos al día (10 dólares al mes) nos ayudará a combatir la inseguridad alimentaria en el sur de Minneapolis. Haga clic aquí para donar.",
+									"marks": []
+								}
+							]
+						}
+					],
+					"link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RYVM823H33LC&source=url",
+					"external": true
+				}
+			},
+			{
+				"id": "cards-blue-bins-es",
+				"slug": "blue-bins",
+				"status": "published",
+				"locale": "es",
+				"translationOf": "cards-blue-bins",
+				"data": {
+					"title": "Contenedor azul de donaciones",
+					"weight": 120,
+					"image": {
+						"provider": "local",
+						"id": "01K000000082X0820PHDZ5JXA3",
+						"alt": "Contenedor azul de donaciones",
+						"width": 432,
+						"height": 540,
+						"mimeType": "image/png",
+						"filename": "BlueBarrel.png",
+						"meta": {
+							"storageKey": "01K000000082X0820PHDZ5JXA3.png"
+						}
+					},
+					"body": [
+						{
+							"_type": "block",
+							"_key": "cards-blue-bins-es-1",
+							"style": "normal",
+							"markDefs": [],
+							"children": [
+								{
+									"_type": "span",
+									"_key": "cards-blue-bins-es-0",
+									"text": "Damos la bienvenida a donaciones de alimentos no perecederos y productos de cuidado personal. Déjelos en los contenedores azules de la Iglesia Metodista Unida de Minnehaha. ¡Gracias!",
+									"marks": []
+								}
+							]
+						}
+					]
+				}
+			}
+		]
+	}
+}

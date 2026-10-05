@@ -1,0 +1,23 @@
+---
+import { PortableText } from "emdash/ui";
+import Base from "../layouts/Base.astro";
+import ContactForm from "./ContactForm.astro";
+import { alternatesFor } from "../utils/translations";
+
+interface Props { page: any; }
+const { page } = Astro.props;
+const d = page.data;
+const alternates = await alternatesFor("pages", page.data.id);
+---
+<Base title={d.title} description={d.description} alternates={alternates} content={{ collection: "pages", id: page.data.id, slug: page.slug }}>
+	<div class="inner">
+		<div class="block_general_title_1 w_margin_1">
+			<h1>{d.title}</h1>
+			{d.subtitle && <h2>{d.subtitle}</h2>}
+		</div>
+		<div class="block_content page-content">
+			{d.content && <PortableText value={d.content} />}
+		</div>
+		{page.slug === "contact" && <ContactForm />}
+	</div>
+</Base>

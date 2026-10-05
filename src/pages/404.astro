@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import { localeOf, strings, homePath } from "../i18n";
+// /es/... URLs get Spanish text.
+const lang = Astro.url.pathname.startsWith("/es/") ? "es" : localeOf(Astro);
+const t = strings(lang);
+---
+<Base title={t.notFound}>
+	<div class="inner">
+		<div class="block_general_title_1 w_margin_1"><h1>{t.notFound}</h1></div>
+		<div class="block_content page-content"><p>{t.notFoundText} <a href={homePath(lang)}>{t.backHome}</a>.</p></div>
+	</div>
+</Base>

@@ -1,0 +1,8 @@
+/* Food Shelf-specific tweaks on top of the shared church theme. */
+header .fs-brand { padding: 20px 0 0; text-align: center; }
+header .fs-logo img { max-width: min(420px, 80%); height: auto; }
+.fs-intro { text-align: center; max-width: 52rem; margin: 0 auto 1.5rem; font-size: 1.15rem; line-height: 1.6; }
+.block_general_title_1 .church-address { margin: .25rem 0 0; }
+.page-content .emdash-image { text-align: center; }
+.page-content .emdash-image img { max-width: 100%; height: auto; }
+.fs-footer { justify-content: space-between; }

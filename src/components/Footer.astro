@@ -1,0 +1,39 @@
+---
+import { site } from "../site";
+import { localeOf, strings, pathFor } from "../i18n";
+const lang = localeOf(Astro);
+const t = strings(lang);
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<div id="footer">
+		<section class="top">
+			<div class="inner">
+				<div class="footer-content fs-footer">
+					<div class="footer-section footer-info">
+						<h4>{site.name}</h4>
+						<p><a href={site.mapUrl} target="_blank" rel="noopener">{site.address}</a></p>
+						<p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+						<p>{t.hours}</p>
+					</div>
+					<div class="footer-section footer-links">
+						<h4>{t.more}</h4>
+						<ul>
+							<li><a href={site.facebook} target="_blank" rel="noopener">Facebook</a></li>
+							<li><a href={site.churchUrl} target="_blank" rel="noopener">Minnehaha United Methodist Church</a></li>
+							<li><a href={pathFor(lang, "nondiscrimination")}>{t.nondisc}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bottom">
+			<div class="inner">
+				<div class="block_copyrights">
+					<p>&copy; {year} {site.name}. {t.rights} {t.churchLine}.</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</footer>

@@ -1,0 +1,17 @@
+---
+import { getEmDashEntry } from "emdash";
+import Home from "../components/Home.astro";
+import Page from "../components/Page.astro";
+import { defaultLocale, localeOf } from "../i18n";
+
+// One catch-all route serves every page in every locale (/about, /es/about, /, /es/ ...), as the
+// EmDash i18n guide recommends. The home page is its own collection (`home`), shown at / and /es/. Astro puts the locale prefix into the slug, so strip it here.
+const parts = (Astro.params.slug ?? "").split("/").filter(Boolean);
+if (parts[0] && parts[0] !== defaultLocale && parts[0] === Astro.currentLocale) parts.shift();
+if (parts.length > 1) return Astro.rewrite("/404");
+const slug = parts[0];
+
+const { entry: page } = slug ? await getEmDashEntry("pages", slug, { locale: Astro.currentLocale }) : { entry: null };
+if (slug && !page) return Astro.rewrite("/404");
+---
+{page ? <Page page={page} /> : <Home />}

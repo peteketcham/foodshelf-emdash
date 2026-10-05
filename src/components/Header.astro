@@ -1,0 +1,49 @@
+---
+import { getMenu } from "emdash";
+import { site } from "../site";
+import { localeOf, strings, otherLocale, homePath } from "../i18n";
+
+interface Props { switchTo: string; }
+const { switchTo } = Astro.props;
+const lang = localeOf(Astro);
+const t = strings(lang);
+const other = otherLocale(lang);
+const menu = await getMenu("main", { locale: lang });
+const norm = (u: string) => u.replace(/\/+$/, "") || "/";
+const here = norm(Astro.url.pathname);
+const isCurrent = (url: string) => !url.startsWith("http") && norm(url) === here;
+const home = homePath(lang);
+---
+
+<header>
+	<div id="header">
+		<section class="middle fs-brand">
+			<div class="inner">
+				<a href={home} class="fs-logo" aria-label={`${site.name} - ${t.home}`}>
+					<img src="/images/Food%20Shelf%20Logo_sm%20copy.png" alt={t.logoAlt} title={t.logoAlt} />
+				</a>
+			</div>
+		</section>
+
+		<section class="bottom">
+			<div class="inner">
+				<div class="block_secondary_menu">
+					<nav aria-label={t.nav}>
+						<ul>
+							{
+								menu?.items.map((item) => (
+									<li class={isCurrent(item.url) ? "current_page_item" : undefined} data-content={item.label.toLowerCase()}>
+										<a href={item.url} target={item.target} rel={item.target === "_blank" ? "noopener noreferrer" : undefined}>{item.label}</a>
+									</li>
+								))
+							}
+							<li class="lang-switch" data-content="language">
+								<a href={switchTo} hreflang={other} lang={other}>{strings(other).name}</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</div>
+</header>

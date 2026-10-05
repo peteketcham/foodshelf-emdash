@@ -1,0 +1,32 @@
+---
+import { getEmDashCollection, getEmDashEntry } from "emdash";
+import { PortableText } from "emdash/ui";
+import Base from "../layouts/Base.astro";
+import Card from "./Card.astro";
+import { byWeight } from "../utils/media";
+import { isCurrent } from "../utils/cards";
+import { alternatesFor } from "../utils/translations";
+import { site } from "../site";
+
+// Pass the locale explicitly: EmDash only applies the URL's locale automatically for signed-in editors,
+// not for anonymous visitors.
+const locale = Astro.currentLocale;
+const { entry: home } = await getEmDashEntry("home", "home", { locale });
+const { entries } = await getEmDashCollection("cards", { limit: 500, locale });
+const cards = byWeight(entries.filter((c: any) => isCurrent(c)));
+const alternates = home ? await alternatesFor("home", home.data.id) : [];
+const d = home?.data;
+---
+<Base title={d?.title ?? site.name} description={d?.description} alternates={alternates} isHome={true} content={home ? { collection: "home", id: home.data.id, slug: "home" } : undefined}>
+	<div class="inner">
+		<div class="block_general_title_1 w_margin_1">
+			<h1>{d?.title ?? site.name}</h1>
+			{d?.subtitle && <h2><strong><em>{d.subtitle}</em></strong></h2>}
+			<p class="church-address"><a href={site.mapUrl} target="_blank" rel="noopener">{site.address}</a></p>
+		</div>
+		{d?.content && <div class="block_content page-content fs-intro"><PortableText value={d.content} /></div>}
+		<div class="block_posts type_1 type_sort">
+			<div class="posts">{cards.map((c: any) => <Card card={c} />)}</div>
+		</div>
+	</div>
+</Base>
